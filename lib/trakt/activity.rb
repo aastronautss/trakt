@@ -7,24 +7,31 @@ module Trakt
   # So you just do: <tt>trakt.activity.community(<types>,<actions>,<start_ts>,<end_ts>)</tt>
   class Activity
     include Connection
+
     def community(*args)
       get_with_args('/activity/community.json/', *args)
     end
+
     def episodes(*args)
       get_with_args('/activity/episodes.json/', *args)
     end
+
     def friends(*args)
       get_with_args('/activity/friends.json/', *args)
     end
+
     def movies(*args)
       get_with_args('/activity/movies.json/', *args)
     end
+
     def seasons(*args)
       get_with_args('/activity/seasons.json/', *args)
     end
+
     def shows(*args)
       get_with_args('/activity/shows.json/', *args)
     end
+
     def user(*args)
       get_with_args('/activity/user.json/', *args)
     end

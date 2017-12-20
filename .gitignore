@@ -15,3 +15,12 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+
+.rspec_status
+
+.idea
+.idea/dataSources.xml
+tags
+*.sublime-workspace
+*.sublime-project
+.project

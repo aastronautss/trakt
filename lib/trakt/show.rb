@@ -1,18 +1,22 @@
 module Trakt
   class Show
     include Connection
+
     def episode_unseen(data)
       require_settings %w|username password apikey|
       post('show/episode/unseen/', data)
     end
+
     def episode_seen(data)
       require_settings %w|username password apikey|
       post('show/episode/seen/', data)
     end
+
     def seen(data)
       require_settings %w|username password apikey|
       post('show/seen/', data)
     end
+
     # need to use thetvdb id here since the slug can't be used for unseen
     def unseen(title)
       all = seasons title
@@ -28,6 +32,7 @@ module Trakt
       end
       episode_unseen tvdb_id: title, episodes: episodes_to_remove
     end
+
     def seasons(title)
       get('show/seasons.json/', title)
     end
